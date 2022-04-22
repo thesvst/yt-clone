@@ -12,7 +12,9 @@ const settings = {
         path.resolve(__dirname, '.'),
       ],
       alias: {
-        map: [],
+        map: [
+          ['@ui', './src/@ui'],
+        ],
         extensions: [
           '.ts',
           '.tsx',
