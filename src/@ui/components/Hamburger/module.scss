@@ -1,0 +1,13 @@
+.hamburger {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: .15s ease all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #90909020;
+  }
+}

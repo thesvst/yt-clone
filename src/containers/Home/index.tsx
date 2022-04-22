@@ -4,7 +4,10 @@ import AuthorizedLayout from '@ui/layout/AuthorizedLayout';
 
 const Home = () => (
   <AuthorizedLayout>
-    <span>Hello world</span>
+    <div>
+      <span>Hello world</span>
+    </div>
+
   </AuthorizedLayout>
 );
 

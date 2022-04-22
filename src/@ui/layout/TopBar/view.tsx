@@ -1,8 +1,10 @@
 import React from 'react';
 
+import Hamburger from '../../components/Hamburger';
+
 const TopBar = () => (
   <div>
-    I am TopBar
+    <Hamburger />
   </div>
 );
 
