@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-const MainContent = () => {
-    return (
-        <div>
-            I am main content
-        </div>
-    );
-};
+interface IMainContentProps {
+  children: ReactElement
+}
+
+const MainContent: FC<IMainContentProps> = ({
+  children,
+}: IMainContentProps): ReactElement => (
+  <div>
+    {children}
+  </div>
+);
 
 export default MainContent;
