@@ -1,0 +1,11 @@
+{
+  "name": "gogoappz",
+  "version": "1.0.0",
+  "description": "Ain't got time for docs, just GoGoing app.",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kmb",
+  "license": "ISC"
+}
