@@ -6,7 +6,7 @@ import App from './app';
 const rootElement = document.getElementById('gogoappz');
 
 ReactDOM.render(
-        <App />,
+    <App />,
     rootElement,
 );
 
