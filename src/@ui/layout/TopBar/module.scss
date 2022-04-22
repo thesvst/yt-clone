@@ -1,0 +1,33 @@
+.topBar {
+  display: grid;
+  padding: 0 24px;
+  box-sizing: border-box;
+  height: 56px;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.inputWrapper {
+  justify-self: center;
+}
+
+.iconsWrapper {
+  justify-self: end;
+  display: flex;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
