@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.17.8",
+    "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1"
@@ -36,7 +37,7 @@
     "babel-preset-flow": "^6.23.0",
     "css-loader": "^5.2.4",
     "dotenv": "^9.0.2",
-    "dotenv-webpack": "^7.0.3",
+    "dotenv-webpack": "^7.1.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^16.1.0",
