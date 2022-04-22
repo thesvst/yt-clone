@@ -4,6 +4,8 @@ import TopBar from './TopBar';
 import SideBar from './SideBar';
 import MainContent from './MainContent';
 
+import styles from './AuthorizedLayout.module.scss';
+
 interface IAuthorizedLayoutProps {
   children: ReactElement
 }
@@ -13,10 +15,12 @@ const AuthorizedLayout: FC<IAuthorizedLayoutProps> = ({
 }: IAuthorizedLayoutProps): ReactElement => (
   <div>
     <TopBar />
-    <SideBar />
-    <MainContent>
-      {children}
-    </MainContent>
+    <div className={styles.mainContent}>
+      <MainContent>
+        {children}
+      </MainContent>
+      <SideBar />
+    </div>
   </div>
 );
 

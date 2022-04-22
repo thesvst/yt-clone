@@ -1,5 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 
+import styles from './module.scss';
+
 interface IMainContentProps {
   children: ReactElement
 }
@@ -7,7 +9,7 @@ interface IMainContentProps {
 const MainContent: FC<IMainContentProps> = ({
   children,
 }: IMainContentProps): ReactElement => (
-  <div>
+  <div className={styles.mainContent}>
     {children}
   </div>
 );

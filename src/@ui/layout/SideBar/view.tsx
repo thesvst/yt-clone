@@ -1,7 +1,10 @@
 import React from 'react';
+import cls from 'classnames';
+
+import styles from './module.scss';
 
 const SideBar = () => (
-  <div>
+  <div className={cls(styles.sidebar)}>
     I am SideBar
   </div>
 );
