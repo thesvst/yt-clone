@@ -8,7 +8,7 @@ export const simplifiedPastInfo: SimplifiedPastInfo = (date) => {
   if (date.months >= 2) return `${date.months} months ago`;
   if (date.months === 1) return `${date.months} month ago`;
 
-  if (date.days >= 2) return `${date.days} months ago`;
+  if (date.days >= 2) return `${date.days} days ago`;
   if (date.days === 1) return `${date.days} day ago`;
 
   return '';
