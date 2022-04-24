@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { simplifiedPastInfo } from 'common/utils/SimplifiedPastInfo';
+import { getSimplifiedPastInfo } from 'common/utils/GetSimplifiedPastInfo';
 import { getDateDifferences } from 'common/utils/GetDateDifferences';
 
 import styles from './module.scss';
@@ -20,7 +20,7 @@ interface IMovieProps {
 const Movie: FC<IMovieProps> = ({
   movie,
 }: IMovieProps) => {
-  const published = simplifiedPastInfo(getDateDifferences(movie.publishedAt));
+  const published = getSimplifiedPastInfo(getDateDifferences(movie.publishedAt));
 
   return (
     <div className={styles.movie}>
