@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'eval-source-map',
   target: 'web',
   entry: {
-    build: './src/view.tsx',
+    build: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'distribution'),

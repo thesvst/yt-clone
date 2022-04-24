@@ -12,40 +12,25 @@ export type TMovie = {
 };
 
 interface IMovieProps {
-  movies: TMovie[],
+  movie: TMovie,
 }
 
 const Movie: FC<IMovieProps> = ({
-  movies,
+  movie,
 }: IMovieProps) => (
-  <div>
-    {movies ? movies.map(({
-      title, author, publishedAt, views,
-    }: TMovie) => (
-      <div>
-        <div className={styles.thumbnail} />
-        <div>
-          <div>
-            Title:
-            { title }
-          </div>
-          <div>
-            Author:
-            { author }
-          </div>
-          <div>
-            <div>
-              Views:
-              { views }
-            </div>
-            <div>
-              Months:
-              { publishedAt }
-            </div>
-          </div>
-        </div>
+  <div className={styles.movie}>
+    <div className={styles.thumbnail} style={{ backgroundImage: `url(${movie.thumbUrl})` }} />
+    <div>
+      <div className={styles.title}>{ movie.title }</div>
+      <div className={styles.details}>
+        <div>{ movie.author }</div>
+        <ul className={styles.detailsInner}>
+          <li>{ movie.views }</li>
+          <li>{ movie.publishedAt }</li>
+        </ul>
       </div>
-    )) : 'Loading'}
+      <div />
+    </div>
   </div>
 );
 

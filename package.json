@@ -1,7 +1,7 @@
 {
   "name": "gogoappz",
   "version": "1.0.0",
-  "description": "Ain't got time for docs, just GoGoing app.",
+  "description": "ytv3",
   "main": ".eslintrc.js",
   "scripts": {
     "start": "webpack serve --node-env development  --config ./webpack.serve.js"

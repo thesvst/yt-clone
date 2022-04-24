@@ -17,7 +17,7 @@ const Home: FC<IHomeProps> = ({
     <MainContent>
       <span>child</span>
     </MainContent>
-    <SideBar />
+    <SideBar movies={movies} />
   </div>
 );
 
