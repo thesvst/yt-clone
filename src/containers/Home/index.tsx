@@ -6,11 +6,14 @@ import { useFetchYouTubeAPI } from 'hooks/useFetchYouTubeAPI';
 
 import { SearchQueryContext } from '@ui/layout/AuthorizedLayout';
 
+import { TVideoData } from '@ui/components/MainContent/types';
+
 import { mapAPIDataToUI } from './utils';
 import { OnMovieClick } from './types';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [videoData, setVideoData] = useState<TVideoData | null>(null);
   const searchQuery = useContext(SearchQueryContext);
   const { request } = useFetchYouTubeAPI({
     endpoint: `search?part=snippet&q=${searchQuery}`,
@@ -18,8 +21,8 @@ const Home = () => {
     mapper: mapAPIDataToUI,
   });
 
-  const onMovieClick: OnMovieClick = (id) => {
-    console.log(id);
+  const onMovieClick: OnMovieClick = (data) => {
+    setVideoData(data);
   };
 
   useEffect(async () => {
@@ -30,6 +33,7 @@ const Home = () => {
   return (
     <HomeView
       movies={movies}
+      videoData={videoData}
       onMovieClick={onMovieClick}
     />
   );
