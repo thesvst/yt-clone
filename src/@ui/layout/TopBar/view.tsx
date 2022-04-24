@@ -24,8 +24,23 @@ const TopBar: FC<ITopBarProps> = ({
         <Logo />
       </div>
       <div className={styles.inputWrapper}>
-        <input value={search} type="text" name="search" onChange={(event) => setSearch(event.target.value)} />
-        <button type="submit" onClick={() => onSearch(search)}>Search!</button>
+        {/* { Usually manage inputs with additional wrapping component } */}
+        {/* { exported wrapped in extra HOC (common stuff for ALL inputs for Formik needs) } */}
+        {/* { but in this case I decided to not over-engineer } */}
+        <input
+          className={styles.searchInput}
+          value={search}
+          type="text"
+          name="search"
+          onChange={(event) => setSearch(event.target.value)}
+        />
+        <button
+          type="submit"
+          onClick={() => onSearch(search)}
+          className={styles.submit}
+        >
+          Search!
+        </button>
       </div>
 
       {/* @ These icons are just placeholders to make it look more like real yt. */}
