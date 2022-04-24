@@ -14,6 +14,7 @@ const settings = {
       alias: {
         map: [
           ['@ui', './src/@ui'],
+          ['hooks', './src/hooks'],
         ],
         extensions: [
           '.ts',

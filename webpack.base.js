@@ -33,7 +33,8 @@ module.exports = {
     alias: {
       '@ui': path.resolve('./src/@ui'),
       common: path.resolve('./src/common'),
-      containers: path.resolve('./src/common'),
+      containers: path.resolve('./src/containers'),
+      hooks: path.resolve('./src/hooks'),
     },
   },
   module: {

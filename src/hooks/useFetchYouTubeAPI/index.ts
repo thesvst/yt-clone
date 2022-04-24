@@ -10,6 +10,7 @@ interface IUseFetchYouTubeAPI {
     [key: string]: string
   },
   method: TRequestMethod,
+  mapper: (data) => object,
 }
 
 type UseFetchYouTubeAPI = (props: IUseFetchYouTubeAPI) => UseFetchYouTubeAPIResult;
@@ -18,6 +19,7 @@ export const useFetchYouTubeAPI: UseFetchYouTubeAPI = ({
   endpoint,
   headers,
   method,
+  mapper,
 }) => {
   const [loading, setLoading] = useState(false);
 
@@ -31,7 +33,7 @@ export const useFetchYouTubeAPI: UseFetchYouTubeAPI = ({
       },
     }).then((data) => {
       setLoading(false);
-      resolve(data);
+      resolve(mapper ? mapper(data) : data);
     }).catch((error) => {
       reject(error);
     });
