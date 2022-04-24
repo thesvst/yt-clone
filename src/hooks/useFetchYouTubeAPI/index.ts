@@ -33,7 +33,7 @@ export const useFetchYouTubeAPI: UseFetchYouTubeAPI = ({
       },
     }).then((data) => {
       setLoading(false);
-      resolve(mapper ? mapper(data) : data);
+      resolve(mapper ? mapper(data.data) : data.data);
     }).catch((error) => {
       reject(error);
     });
