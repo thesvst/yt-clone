@@ -13,3 +13,7 @@ Starting from the source (src) folder the concept looks like: <br>
 **common** - reusable not-jsx code i.e. utils, global types, assets<br>
 **containers** - separated app logic. It should import template pages from @ui/pages<br>
 **public** - index.html template<br>
+**core** - core functionalities (like RequestManager, ErrorLogger)
+**public** - index.html template<br>
+**styles** - global styles
+**hooks** - no need to explain (:

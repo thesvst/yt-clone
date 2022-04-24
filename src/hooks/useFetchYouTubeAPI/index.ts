@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import YouTubeRequestManager from '../../core/YouTubeRequestManager';
-import { TRequestMethod } from '../../types/TRequestMethod';
+import { TRequestMethod } from '../../common/types/TRequestMethod';
 import { UseFetchYouTubeAPIResult } from './types';
 
 interface IUseFetchYouTubeAPI {
