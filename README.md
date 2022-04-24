@@ -1,6 +1,9 @@
 # Hellow :3
 
-## Project configuration 
+## How to start (!)
+Generate API key and set it as value of .env API_KEY variable
+
+## More about configuration 
 Stuff like ESLint, babel, webpack is mostly copied from my non-commercial project.
 I know it is a bit over configured. I just did not want to use create react app and did not
 want to spend much time on stack configuration.
