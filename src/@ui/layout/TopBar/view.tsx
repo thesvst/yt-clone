@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  Dispatch, FC, ReactElement, SetStateAction, useState,
+} from 'react';
 
 import Hamburger from '@ui/components/Hamburger';
 import { FaAccessibleIcon, FaAcquisitionsIncorporated, FaAccusoft } from 'react-icons/fa';
@@ -6,29 +8,40 @@ import Logo from '@ui/components/Logo';
 
 import styles from './module.scss';
 
-const TopBar = () => (
-  <div className={styles.topBar}>
-    <div className={styles.leftSide}>
-      <Hamburger />
-      <Logo />
-    </div>
-    <div className={styles.inputWrapper}>
-      <input type="text" name="" id="" />
-    </div>
+interface ITopBarProps {
+  onSearch: Dispatch<SetStateAction<string>>
+}
 
-    {/* @ These icons are just placeholders to make it look more like real yt. */}
-    <div className={styles.iconsWrapper}>
-      <div className={styles.icon}>
-        <FaAccessibleIcon />
+const TopBar: FC<ITopBarProps> = ({
+  onSearch,
+}: ITopBarProps): ReactElement => {
+  const [search, setSearch] = useState('');
+
+  return (
+    <div className={styles.topBar}>
+      <div className={styles.leftSide}>
+        <Hamburger />
+        <Logo />
       </div>
-      <div className={styles.icon}>
-        <FaAcquisitionsIncorporated />
+      <div className={styles.inputWrapper}>
+        <input value={search} type="text" name="search" onChange={(event) => setSearch(event.target.value)} />
+        <button type="submit" onClick={() => onSearch(search)}>Search!</button>
       </div>
-      <div className={styles.icon}>
-        <FaAccusoft />
+
+      {/* @ These icons are just placeholders to make it look more like real yt. */}
+      <div className={styles.iconsWrapper}>
+        <div className={styles.icon}>
+          <FaAccessibleIcon />
+        </div>
+        <div className={styles.icon}>
+          <FaAcquisitionsIncorporated />
+        </div>
+        <div className={styles.icon}>
+          <FaAccusoft />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default TopBar;
