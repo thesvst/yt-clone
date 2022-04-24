@@ -9,7 +9,6 @@ export type TMovie = {
   id: string,
   title: string,
   author: string,
-  views: string,
   publishedAt: string,
   thumbUrl: string,
 };
@@ -30,10 +29,9 @@ const Movie: FC<IMovieProps> = ({
         <div className={styles.title}>{ movie.title }</div>
         <div className={styles.details}>
           <div>{ movie.author }</div>
-          <ul className={styles.detailsInner}>
-            <li>{ movie.views }</li>
-            <li>{ published }</li>
-          </ul>
+          <div className={styles.detailsInner}>
+            <div>{ published }</div>
+          </div>
         </div>
         <div />
       </div>
