@@ -2,6 +2,10 @@
   padding: 24px 24px 0 0;
   margin-right: 24px;
   position: relative;
+  @media (max-width: 978px) {
+    padding: 10px;
+    margin: 0;
+  }
 }
 
 .movie {

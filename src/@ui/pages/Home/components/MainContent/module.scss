@@ -2,4 +2,10 @@
   padding: 24px 24px 0 0;
   margin-left: 24px;
   position: relative;
+  @media (max-width: 978px) {
+    margin: 15px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
 }

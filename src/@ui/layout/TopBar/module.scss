@@ -7,6 +7,10 @@
   grid-auto-flow: column;
   align-items: center;
   background: #fff;
+  @media (max-width: 478px) {
+    grid-auto-flow: row;
+    height: unset;
+  }
 }
 
 .searchInput {
@@ -20,12 +24,22 @@
     border: 1px solid #3f51b5;
     border-radius: 1px;
   }
+
+  @media(max-width: 1200px) {
+    width: 250px;
+  }
+  @media (max-width: 768px) {
+    width: auto;
+  }
 }
 
 .leftSide {
   display: flex;
   align-items: center;
-  gap: 10px
+  gap: 10px;
+  @media (max-width: 478px) {
+    justify-content: center;
+  }
 }
 
 .inputWrapper {
@@ -36,6 +50,9 @@
 .iconsWrapper {
   justify-self: end;
   display: flex;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .icon {

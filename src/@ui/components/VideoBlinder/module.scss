@@ -15,6 +15,9 @@
   width: 80%;
   background: #ccc;
   margin-top: 25px;
+  @media (max-width: 978px) {
+    width: 100%;
+  }
 }
 
 .description {
@@ -22,4 +25,7 @@
   background: #ccc;
   height: 28px;
   width: 85%;
+  @media (max-width: 978px) {
+    width: 100%;
+  }
 }

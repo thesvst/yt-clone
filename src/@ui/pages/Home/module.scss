@@ -1,6 +1,10 @@
 .mainContent {
   display: grid;
   grid-template-columns: auto 426px;
-  max-width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
+  @media (max-width: 978px) {
+    grid-auto-flow: row;
+    grid-template-columns: auto;
+  }
 }

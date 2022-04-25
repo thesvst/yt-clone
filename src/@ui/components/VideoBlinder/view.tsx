@@ -10,8 +10,9 @@ const VideoBlinder = () => {
   const playerStyles = { height: playerHeight };
 
   return (
-    <div ref={ref}>
+    <>
       <div
+        ref={ref}
         className={styles.player}
         style={playerStyles}
       >
@@ -19,7 +20,7 @@ const VideoBlinder = () => {
       </div>
       <div className={styles.title} />
       <div className={styles.description} />
-    </div>
+    </>
   );
 };
 

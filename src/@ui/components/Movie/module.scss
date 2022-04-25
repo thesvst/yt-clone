@@ -6,9 +6,19 @@
   flex-shrink: 0;
   background-position: center;;
   margin-right: 8px;
+  @media (max-width: 550px) {
+    width: 100%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    height: unset;
+  }
 }
 .movie {
   display: flex;
+  @media (max-width: 550px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .title {
@@ -16,6 +26,9 @@
   font-weight: 500;
   margin-top: 4px;
   font-size: 14px;
+  @media (max-width: 550px) {
+    margin-top: 8px;
+  }
 }
 
 .details {
