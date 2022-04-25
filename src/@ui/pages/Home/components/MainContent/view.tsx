@@ -4,10 +4,12 @@ import React, {
 } from 'react';
 
 import Loader from '@ui/components/Loader';
+import IFrame from '@ui/components/IFrame';
 
 import styles from './module.scss';
 import { TPlayerVideoData } from './types';
 import MovieDetails from './components/MovieDetails';
+import { getVideoSrc } from './utils';
 
 interface IMainContentProps {
   videoData: TPlayerVideoData | null,
@@ -21,12 +23,18 @@ const MainContent: FC<IMainContentProps> = ({
   setVideoLoading,
 }: IMainContentProps): ReactElement => {
   const iframeWrapperRef = useRef<any>(null);
+  const videoSrc = getVideoSrc(videoData?.id);
+
   const calcIframeHeight = () => {
     if (!iframeWrapperRef?.current) return 360;
 
     return iframeWrapperRef.current.clientWidth * 0.5625;
   };
   const iframeHeight = calcIframeHeight();
+
+  const onLoadCallback = () => {
+    setVideoLoading(false);
+  };
 
   useEffect(() => {
     setVideoLoading(true);
@@ -37,19 +45,13 @@ const MainContent: FC<IMainContentProps> = ({
       {(videoLoading && videoData?.id) && <Loader />}
       <div ref={iframeWrapperRef}>
         { videoData ? (
-          <div>
-            <iframe
-              title={videoData.id}
-              id="player"
-              width="100%"
-              onLoad={() => {
-                setVideoLoading(false);
-              }}
-              height={iframeHeight}
-              src={`https://www.youtube.com/embed/${videoData.id}?enablejsapi=1&origin=http://example.com`}
-              frameBorder="0"
-            />
-          </div>
+          <IFrame
+            id={videoData.id}
+            title={videoData.title}
+            onLoadCallback={onLoadCallback}
+            height={iframeHeight}
+            src={videoSrc}
+          />
         ) : 'Video not selected' }
         {(videoData && !videoLoading) && (
           <MovieDetails
