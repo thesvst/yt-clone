@@ -1,4 +1,6 @@
-import React, { FC, ReactElement } from 'react';
+import React, {
+  Dispatch, FC, ReactElement, SetStateAction,
+} from 'react';
 
 import MainContent from '@ui/components/MainContent';
 import SideBar from '@ui/components/SideBar';
@@ -14,15 +16,23 @@ interface IHomeProps {
   movies: TMovie[],
   onMovieClick: OnMovieClick,
   videoData: TPlayerVideoData | null,
+  videoLoading: boolean,
+  setVideoLoading: Dispatch<SetStateAction<boolean>>,
 }
 
 const Home: FC<IHomeProps> = ({
   movies,
   onMovieClick,
   videoData,
+  videoLoading,
+  setVideoLoading,
 }: IHomeProps): ReactElement => (
   <div className={styles.mainContent}>
-    <MainContent videoData={videoData} />
+    <MainContent
+      videoData={videoData}
+      videoLoading={videoLoading}
+      setVideoLoading={setVideoLoading}
+    />
     <SideBar
       movies={movies}
       onMovieClick={onMovieClick}
