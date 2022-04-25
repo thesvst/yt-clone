@@ -19,6 +19,7 @@ interface IHomeProps {
   videoData: TPlayerVideoData | null,
   videoLoading: boolean,
   setVideoLoading: Dispatch<SetStateAction<boolean>>,
+  moviesLoading: boolean,
 }
 
 const Home: FC<IHomeProps> = ({
@@ -27,6 +28,7 @@ const Home: FC<IHomeProps> = ({
   videoData,
   videoLoading,
   setVideoLoading,
+  moviesLoading,
 }: IHomeProps): ReactElement => (
   <div className={styles.mainContent}>
     <MainContent
@@ -36,6 +38,7 @@ const Home: FC<IHomeProps> = ({
     />
     <SideBar
       movies={movies}
+      moviesLoading={moviesLoading}
       onMovieClick={onMovieClick}
     />
   </div>

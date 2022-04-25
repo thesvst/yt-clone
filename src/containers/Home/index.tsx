@@ -17,7 +17,7 @@ const Home = () => {
   const [videoData, setVideoData] = useState<TPlayerVideoData | null>(null);
   const [videoLoading, setVideoLoading] = useState(false);
   const searchQuery = useContext(SearchQueryContext);
-  const { request } = useFetchYouTubeAPI({
+  const { request, loading: moviesLoading } = useFetchYouTubeAPI({
     endpoint: `search?part=snippet&q=${searchQuery}`,
     method: 'GET',
     mapper: mapAPIDataToUI,
@@ -42,6 +42,7 @@ const Home = () => {
 
   return (
     <HomeView
+      moviesLoading={moviesLoading}
       movies={movies}
       videoData={videoData}
       videoLoading={videoLoading}
