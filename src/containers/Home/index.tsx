@@ -6,7 +6,7 @@ import { useFetchYouTubeAPI } from 'hooks/useFetchYouTubeAPI';
 
 import { SearchQueryContext } from '@ui/layout/AuthorizedLayout';
 
-import { TPlayerVideoData } from '@ui/components/MainContent/types';
+import { TPlayerVideoData } from '@ui/pages/Home/components/MainContent/types';
 
 import { mapAPIDataToUI } from './utils';
 import { OnMovieClick } from './types';

@@ -2,13 +2,14 @@ import React, {
   Dispatch, FC, ReactElement, SetStateAction,
 } from 'react';
 
-import MainContent from '@ui/components/MainContent';
 import SideBar from '@ui/components/SideBar';
 import { TMovie } from '@ui/components/Movie';
 
 import { OnMovieClick } from 'containers/Home/types';
 
-import { TPlayerVideoData } from '@ui/components/MainContent/types';
+import { TPlayerVideoData } from '@ui/pages/Home/components/MainContent/types';
+
+import MainContent from './components/MainContent';
 
 import styles from './module.scss';
 

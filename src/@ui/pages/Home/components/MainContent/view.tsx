@@ -7,6 +7,7 @@ import Loader from '@ui/components/Loader';
 
 import styles from './module.scss';
 import { TPlayerVideoData } from './types';
+import MovieDetails from './components/MovieDetails';
 
 interface IMainContentProps {
   videoData: TPlayerVideoData | null,
@@ -51,14 +52,10 @@ const MainContent: FC<IMainContentProps> = ({
           </div>
         ) : 'Video not selected' }
         {(videoData && !videoLoading) && (
-        <div>
-          <div className={styles.title}>
-            {videoData.title}
-          </div>
-          <div className={styles.description}>
-            {videoData.description}
-          </div>
-        </div>
+          <MovieDetails
+            title={videoData.title}
+            description={videoData.description}
+          />
         )}
       </div>
     </div>
