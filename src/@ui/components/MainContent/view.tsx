@@ -3,6 +3,8 @@ import React, {
   FC, ReactElement, SetStateAction, useEffect, useRef,
 } from 'react';
 
+import Loader from '@ui/components/Loader';
+
 import styles from './module.scss';
 import { TPlayerVideoData } from './types';
 
@@ -31,7 +33,7 @@ const MainContent: FC<IMainContentProps> = ({
 
   return (
     <div className={styles.mainContent}>
-      {(videoLoading && videoData?.id) && <div className={styles.loader}>LOADING</div>}
+      {(videoLoading && videoData?.id) && <Loader />}
       <div ref={iframeWrapperRef}>
         { videoData ? (
           <div>
@@ -47,7 +49,7 @@ const MainContent: FC<IMainContentProps> = ({
               frameBorder="0"
             />
           </div>
-        ) : 'Video not selected'}
+        ) : 'Video not selected' }
         {(videoData && !videoLoading) && (
         <div>
           <div className={styles.title}>
