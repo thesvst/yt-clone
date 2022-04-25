@@ -5,6 +5,9 @@ import React, {
 
 import Loader from '@ui/components/Loader';
 import IFrame from '@ui/components/IFrame';
+import VideoBlinder from '@ui/components/VideoBlinder';
+
+import { getYouTubePlayerHeight } from 'common/utils/GetYouTubePlayerHeight';
 
 import styles from './module.scss';
 import { TPlayerVideoData } from './types';
@@ -25,12 +28,7 @@ const MainContent: FC<IMainContentProps> = ({
   const iframeWrapperRef = useRef<any>(null);
   const videoSrc = getVideoSrc(videoData?.id);
 
-  const calcIframeHeight = () => {
-    if (!iframeWrapperRef?.current) return 360;
-
-    return iframeWrapperRef.current.clientWidth * 0.5625;
-  };
-  const iframeHeight = calcIframeHeight();
+  const iframeHeight = getYouTubePlayerHeight(iframeWrapperRef);
 
   const onLoadCallback = () => {
     setVideoLoading(false);
@@ -52,7 +50,7 @@ const MainContent: FC<IMainContentProps> = ({
             height={iframeHeight}
             src={videoSrc}
           />
-        ) : 'Video not selected' }
+        ) : <VideoBlinder /> }
         {(videoData && !videoLoading) && (
           <MovieDetails
             title={videoData.title}
