@@ -6,14 +6,14 @@ import { useFetchYouTubeAPI } from 'hooks/useFetchYouTubeAPI';
 
 import { SearchQueryContext } from '@ui/layout/AuthorizedLayout';
 
-import { TVideoData } from '@ui/components/MainContent/types';
+import { TPlayerVideoData } from '@ui/components/MainContent/types';
 
 import { mapAPIDataToUI } from './utils';
 import { OnMovieClick } from './types';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [videoData, setVideoData] = useState<TVideoData | null>(null);
+  const [videoData, setVideoData] = useState<TPlayerVideoData | null>(null);
   const searchQuery = useContext(SearchQueryContext);
   const { request } = useFetchYouTubeAPI({
     endpoint: `search?part=snippet&q=${searchQuery}`,

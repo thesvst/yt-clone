@@ -9,4 +9,5 @@ export const mapAPIDataToUI = (response: UseFetchYouTubeAPIResponse): TMovie[] =
     author: data.snippet.channelTitle,
     publishedAt: data.snippet.publishedAt,
     thumbUrl: data.snippet.thumbnails.high.url,
+    description: data.snippet.description,
   }));

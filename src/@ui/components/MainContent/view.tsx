@@ -1,28 +1,49 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useRef } from 'react';
 
 import styles from './module.scss';
-import { TVideoData } from './types';
+import { TPlayerVideoData } from './types';
 
 interface IMainContentProps {
-  videoData: TVideoData | null,
+  videoData: TPlayerVideoData | null,
 }
 
 const MainContent: FC<IMainContentProps> = ({
   videoData,
-}: IMainContentProps): ReactElement => (
-  <div className={styles.mainContent}>
-    { videoData ? (
-      <iframe
-        title={videoData.id}
-        id="player"
-        width="640"
-        height="360"
-        src={`https://www.youtube.com/embed/${'M7lc1UVf-VE'}?enablejsapi=1&origin=http://example.com`}
-        frameBorder="0"
-      />
-    ) : 'Video not selected'}
+}: IMainContentProps): ReactElement => {
+  const iframeWrapperRef = useRef<any>(null);
+  const calcIframeHeight = () => {
+    if (!iframeWrapperRef?.current) return 360;
 
-  </div>
-);
+    return iframeWrapperRef.current.clientWidth * 0.5625;
+  };
+  const iframeHeight = calcIframeHeight();
+
+  return (
+    <div className={styles.mainContent}>
+      <div ref={iframeWrapperRef}>
+        { videoData ? (
+          <>
+            <iframe
+              title={videoData.id}
+              id="player"
+              width="100%"
+              height={iframeHeight}
+              src={`https://www.youtube.com/embed/${videoData.id}?enablejsapi=1&origin=http://example.com`}
+              frameBorder="0"
+            />
+            <div>
+              <div className={styles.title}>
+                {videoData.title}
+              </div>
+              <div className={styles.description}>
+                {videoData.description}
+              </div>
+            </div>
+          </>
+        ) : 'Video not selected'}
+      </div>
+    </div>
+  );
+};
 
 export default MainContent;

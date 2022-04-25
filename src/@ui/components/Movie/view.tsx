@@ -13,6 +13,7 @@ export type TMovie = {
   author: string,
   publishedAt: string,
   thumbUrl: string,
+  description: string
 };
 
 interface IMovieProps {
@@ -25,11 +26,18 @@ const Movie: FC<IMovieProps> = ({
   onMovieClick,
 }: IMovieProps) => {
   const published = getSimplifiedPastInfo(getDateDifferences(movie.publishedAt));
+  const onMovieClickAction = (clickedMovie: TMovie) => {
+    onMovieClick(({
+      id: clickedMovie.id,
+      title: clickedMovie.title,
+      description: clickedMovie.description,
+    }));
+  };
 
   return (
     <div
       className={styles.movie}
-      onClick={() => onMovieClick(movie.id)}
+      onClick={() => onMovieClickAction(movie)}
     >
       <div className={styles.thumbnail} style={{ backgroundImage: `url(${movie.thumbUrl})` }} />
       <div>

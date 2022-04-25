@@ -1,3 +1,3 @@
-import { TVideoData } from '@ui/components/MainContent/types';
+import { TPlayerVideoData } from '@ui/components/MainContent/types';
 
-export type OnMovieClick = (data: TVideoData) => void;
+export type OnMovieClick = (data: TPlayerVideoData) => void;
