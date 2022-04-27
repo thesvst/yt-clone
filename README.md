@@ -1,7 +1,8 @@
 # Hellow :3
 
 ## How to start (!)
-Generate API key and set it as value of .env API_KEY variable
+Generate Google API key and set it as value of .env API_KEY variable<br/>
+Generate FB App ID  and set it as value of .env FB_APP_ID variable
 
 ## More about configuration 
 Stuff like ESLint, babel, webpack is mostly copied from my non-commercial project.

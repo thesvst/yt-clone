@@ -1,3 +1,4 @@
-import Component from './AuthorizedLayout';
+import AuthorizedLayout from './AuthorizedLayout';
+import UnAuthorizedLayout from './UnAuthorizedLayout';
 
-export default Component;
+export { AuthorizedLayout, UnAuthorizedLayout };
