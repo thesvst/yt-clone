@@ -24,8 +24,7 @@ class FBAuthScriptManager {
       return null;
     }
 
-    // return storageItem?.authResponse?.accessToken;
-    return storageItem;
+    return storageItem?.authResponse?.accessToken;
   }
 }
 
