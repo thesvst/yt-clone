@@ -2,7 +2,8 @@
 
 ## How to start (!)
 Generate Google API key and set it as value of .env API_KEY variable<br/>
-Generate FB App ID  and set it as value of .env FB_APP_ID variable
+Generate FB App ID  and set it as value of .env FB_APP_ID variable<br>
+Run command docker-compose up
 
 ## More about configuration 
 Stuff like ESLint, babel, webpack is mostly copied from my non-commercial project.
