@@ -13,9 +13,7 @@ const AuthorizedLayout: FC = (): ReactElement => {
   const [search, setSearch] = useState('');
 
   const authenticated = FBAuthScriptManager.getToken();
-  console.log(authenticated);
-  console.log(authenticated);
-  console.log(authenticated);
+
   if (!authenticated) {
     return (
       <Navigate to="u/login" />
